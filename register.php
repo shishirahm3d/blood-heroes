@@ -132,9 +132,9 @@ $divisions_result = $conn->query($divisions_sql);
                     </div>
                     
                     <div class="form-group">
-                        <label for="weight">Weight Range</label>
+                        <label for="weight">Weight</label>
                         <select id="weight" name="weight" required>
-                            <option value="">Select Weight Range</option>
+                            <option value="">Select Weight (Minimum 45kg)</option>
                             <option value="45-50 kg">45-50 kg</option>
                             <option value="50-60 kg">50-60 kg</option>
                             <option value="60-70 kg">60-70 kg</option>
