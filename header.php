@@ -15,10 +15,10 @@ session_start();
         <div class="nav-left">
             <ul>
                 <li><a href="index.php">Home</a></li>
-                <li><a href="need_blood.php">I Need Blood</a></li>
-                <li><a href="blood_requests.php">Those Who Need Blood</a></li>
-                <li><a href="find_donor.php">Find a Donor</a></li>
-                <li><a href="register.php">I Want To Donate Blood</a></li>
+                <li><a href="need_blood.php">Request Blood</a></li>
+                <li><a href="blood_requests.php">View Requests</a></li>
+                <li><a href="find_donor.php">Search Donors</a></li>
+                <li><a href="register.php">Register as Donor</a></li>
                 <li><a href="about.php">About Us</a></li>
             </ul>
         </div>
@@ -27,10 +27,17 @@ session_start();
             <?php if(isset($_SESSION['user_id'])): ?>
                 <div class="user-menu">
                     <span>Welcome, <?php echo $_SESSION['full_name']; ?></span>
-                    <a href="logout.php" class="btn btn-outline">Logout</a>
+                    <div class="dropdown">
+                        <button class="dropbtn">My Account <i class="fas fa-caret-down"></i></button>
+                        <div class="dropdown-content">
+                            <a href="profile.php">My Profile</a>
+                            <a href="logout.php">Logout</a>
+                        </div>
+                    </div>
                 </div>
             <?php else: ?>
                 <a href="login.php" class="btn btn-outline">Login</a>
             <?php endif; ?>
         </div>
     </nav>
+

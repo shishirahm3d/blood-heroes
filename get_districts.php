@@ -22,3 +22,4 @@ if (isset($_GET['division_id'])) {
     echo json_encode([]);
 }
 ?>
+

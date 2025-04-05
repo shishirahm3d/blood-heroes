@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $mobile_number = $_POST['mobile_number'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $gender = $_POST['gender']; // Added gender field
     $blood_group = $_POST['blood_group'];
     $age = $_POST['age'];
     $weight = $_POST['weight'];
@@ -33,10 +34,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn->begin_transaction();
         
         try {
-            // Insert into users table
-            $user_sql = "INSERT INTO users (full_name, email, mobile_number, password) VALUES (?, ?, ?, ?)";
+            // Insert into users table with gender
+            $user_sql = "INSERT INTO users (full_name, email, mobile_number, password, gender) VALUES (?, ?, ?, ?, ?)";
             $user_stmt = $conn->prepare($user_sql);
-            $user_stmt->bind_param("ssss", $full_name, $email, $mobile_number, $password);
+            $user_stmt->bind_param("sssss", $full_name, $email, $mobile_number, $password, $gender);
             $user_stmt->execute();
             
             // Get the user_id
@@ -129,6 +130,14 @@ $divisions_result = $conn->query($divisions_sql);
                     <div class="form-group">
                         <label for="age">Age</label>
                         <input type="number" id="age" name="age" min="18" max="65" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender" required>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
                     </div>
                     
                     <div class="form-group">
@@ -248,3 +257,4 @@ function loadDistricts() {
 </script>
 
 <?php include 'footer.php'; ?>
+

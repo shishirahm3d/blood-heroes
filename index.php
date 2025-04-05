@@ -16,11 +16,11 @@
 
 <section class="stats">
     <div class="stat-item">
-        <div class="stat-number">1000+</div>
+        <div class="stat-number">5000+</div>
         <div class="stat-label">Registered Donors</div>
     </div>
     <div class="stat-item">
-        <div class="stat-number">500+</div>
+        <div class="stat-number">1000+</div>
         <div class="stat-label">Lives Saved</div>
     </div>
     <div class="stat-item">
