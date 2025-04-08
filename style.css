@@ -1,4 +1,4 @@
-/* Global Styles --primary-color: #e74c3c;f32e18*/ 
+/* Global Styles */ 
 :root {
   --primary-color: #e74c3c;
   --primary-dark: #e74c3c;
@@ -425,16 +425,6 @@ ul {
   gap: 15px;
 }
 
-/* Validation Error Message 
-.error-message {
-  display: none;
-  background-color: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-}*/
 
 /* Requests List */
 .requests-list,
