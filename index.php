@@ -1,15 +1,15 @@
 <?php include 'header.php'; ?>
 
-<section class="hero">
-    <div class="hero-content">
+<section class="blood-hero">
+    <div class="blood-hero-content">
         <h1>Donate Blood, Save Lives</h1>
         <p>Your donation can make a difference in someone's life</p>
-        <div class="hero-buttons">
+        <div class="blood-hero-buttons">
             <a href="need_blood.php" class="btn btn-primary">I Need Blood</a>
             <a href="register.php" class="btn btn-secondary">Become a Donor</a>
         </div>
     </div>
-    <div class="hero-image">
+    <div class="blood-hero-image">
         <img src="images/blood.png" alt="Blood donation illustration">
     </div>
 </section>

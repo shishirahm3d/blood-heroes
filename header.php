@@ -8,7 +8,9 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blood Heroes - Save Lives Through Blood Donation</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"> 
+    <!-- https://fontawesome.com/start -->
+    <!-- https://cdnjs.com/libraries/font-awesome -->
 </head>
 <body>
     <nav class="navbar">

@@ -3,9 +3,9 @@
             <div class="footer-logo">Blood Heroes</div>
             <p>Connecting blood donors with those in need</p>
             <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/shishirahm3d/blood-heroes"><i class="fab fa-facebook"></i></a>
+                <a href="https://github.com/shishirahm3d/blood-heroes"><i class="fab fa-telegram"></i></a>
+                <a href="https://github.com/shishirahm3d/blood-heroes"><i class="fab fa-github"></i></a>
             </div>
         </div>
         <div class="footer-bottom">

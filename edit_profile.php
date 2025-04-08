@@ -61,15 +61,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $blood_group = $_POST['blood_group'];
     $age = $_POST['age'];
     $weight = $_POST['weight'];
-    $last_donation_date = $_POST['last_donation_date'];
+    //$last_donation_date = $_POST['last_donation_date'];
+    $last_donation_date = isset($_POST['last_donation_date']) && !empty($_POST['last_donation_date']) ? $_POST['last_donation_date'] : NULL;
     $division_id = $_POST['division_id'];
     $district_id = $_POST['district_id'];
     $area = $_POST['area'];
-    
-    // Handle "never donated" checkbox
-    if (isset($_POST['never_donated']) && $_POST['never_donated'] == 'on') {
-        $last_donation_date = 'Never donated';
-    }
     
     // Check if email already exists for another user
     $check_email = "SELECT user_id FROM users WHERE email = ? AND user_id != ?";
@@ -179,29 +175,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Get all divisions for dropdown
 $divisions_query = "SELECT division_id, division_name FROM divisions ORDER BY division_name";
 $divisions_result = $conn->query($divisions_query);
-
-// Create images directory if it doesn't exist
-if (!file_exists('images')) {
-    mkdir('images', 0777, true);
-    
-    // Create default male profile image
-    $male_image = imagecreatetruecolor(200, 200);
-    $background = imagecolorallocate($male_image, 51, 153, 255); // Blue background
-    $text_color = imagecolorallocate($male_image, 255, 255, 255); // White text
-    imagefill($male_image, 0, 0, $background);
-    imagestring($male_image, 5, 60, 90, "Male User", $text_color);
-    imagepng($male_image, 'images/default_male.png');
-    imagedestroy($male_image);
-    
-    // Create default female profile image
-    $female_image = imagecreatetruecolor(200, 200);
-    $background = imagecolorallocate($female_image, 255, 102, 204); // Pink background
-    $text_color = imagecolorallocate($female_image, 255, 255, 255); // White text
-    imagefill($female_image, 0, 0, $background);
-    imagestring($female_image, 5, 50, 90, "Female User", $text_color);
-    imagepng($female_image, 'images/default_female.png');
-    imagedestroy($female_image);
-}
 
 // Default profile picture based on gender
 $profile_pic = "images/default_male.png";

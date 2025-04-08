@@ -37,7 +37,7 @@ if ($district_id) {
     $types .= "i";
 }
 
-// Order by availability (available donors first)
+// Order by availability (available donors will show first)
 $sql .= " ORDER BY d.is_available DESC, u.full_name ASC";
 
 $stmt = $conn->prepare($sql);

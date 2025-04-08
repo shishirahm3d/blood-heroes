@@ -64,29 +64,6 @@ if ($user['last_donation_date'] && $user['last_donation_date'] != 'Never donated
     }
 }
 
-// Create images directory if it doesn't exist
-if (!file_exists('images')) {
-    mkdir('images', 0777, true);
-    
-    // Create default male profile image
-    $male_image = imagecreatetruecolor(200, 200);
-    $background = imagecolorallocate($male_image, 51, 153, 255); // Blue background
-    $text_color = imagecolorallocate($male_image, 255, 255, 255); // White text
-    imagefill($male_image, 0, 0, $background);
-    imagestring($male_image, 5, 60, 90, "Male User", $text_color);
-    imagepng($male_image, 'images/default_male.png');
-    imagedestroy($male_image);
-    
-    // Create default female profile image
-    $female_image = imagecreatetruecolor(200, 200);
-    $background = imagecolorallocate($female_image, 255, 102, 204); // Pink background
-    $text_color = imagecolorallocate($female_image, 255, 255, 255); // White text
-    imagefill($female_image, 0, 0, $background);
-    imagestring($female_image, 5, 50, 90, "Female User", $text_color);
-    imagepng($female_image, 'images/default_female.png');
-    imagedestroy($female_image);
-}
-
 // Default profile picture based on gender
 $profile_pic = "images/default_male.png";
 if ($user['gender'] == 'Female') {

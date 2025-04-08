@@ -15,7 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $blood_group = $_POST['blood_group'];
     $age = $_POST['age'];
     $weight = $_POST['weight'];
-    $last_donation_date = $_POST['last_donation_date'] ? $_POST['last_donation_date'] : NULL;
+    // $last_donation_date = $_POST['last_donation_date'] ? $_POST['last_donation_date'] : NULL;
+    $last_donation_date = isset($_POST['last_donation_date']) && !empty($_POST['last_donation_date']) ? $_POST['last_donation_date'] : NULL;
     $division_id = $_POST['division_id'];
     $district_id = $_POST['district_id'];
     $area = $_POST['area'];
